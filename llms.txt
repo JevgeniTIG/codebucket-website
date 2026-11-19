@@ -1,0 +1,14 @@
+# Codebucket
+
+> Codebucket (CodeBucket OÜ, reg. code 17281724) is a small software studio in Tallinn, Estonia. It designs, builds and ships web platforms, SaaS products and mobile apps for iOS and Android. Contact: info@codebucket.ee.
+
+## Work
+- [Tradefora](https://tradefora.com): execution-quality analytics for brokers and traders (slippage, fills, latency). Codebucket builds the web front-ends: trader cabinet, broker portal, admin tools and the design system.
+- [MERE 44](https://mere44.ee): sales site for a sea-view building plot near Tallinn. The planned house is shown in 3D on the real plot, with a room-by-room walk-through, a fly-over and drone photos, in Estonian, English and Russian.
+- [Votumio](https://votumio.com): Codebucket's own SaaS for live polls, quizzes, tests and retrospectives for large groups. Participants answer from their phones; 15 languages; PDF and PowerPoint export.
+- [Decanted](https://apps.apple.com/app/decanted-wine-cellar-journal/id6807045534): a private, offline wine journal for iOS and Android that fills in producer, grape, region and vintage from a photo of the label.
+- Small apps published under the Code Harbour label: Smash My Doodle, Spin & Win, Catch It All!, Yet Another Sea Battle, Yet Another Puzzle.
+
+## Contact
+- E-mail: info@codebucket.ee
+- Website: https://codebucket.ee

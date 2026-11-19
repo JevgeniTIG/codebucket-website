@@ -238,7 +238,7 @@ a.done:hover { text-decoration: underline; text-decoration-thickness: 2px; }
 .item-idea.is-done .box { border-style: solid; }
 
 /* about + footer */
-.about { padding-top: 72px; padding-bottom: 88px; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr); gap: 40px; }
+.about { padding-top: 72px; padding-bottom: 48px; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr); gap: 40px; }
 .about h2 { margin: 0; font-size: clamp(34px, 4.4vw, 52px); line-height: 1; letter-spacing: -0.035em; }
 .about p { margin: 0; font-size: 20px; color: #2E2B27; }
 .foot {
@@ -249,6 +249,13 @@ a.done:hover { text-decoration: underline; text-decoration-thickness: 2px; }
 }
 .foot a { color: var(--muted); }
 .foot a:hover { color: var(--red-text); }
+
+/* brief Q&A */
+.brief { padding-bottom: 88px; }
+.brief-title { margin: 0 0 20px; font-size: 34px; color: var(--red-text); font-weight: 500; }
+.brief-list { margin: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px 40px; border-top: 1px solid var(--line); padding-top: 28px; }
+.qa dt { font-weight: 600; font-size: 18px; margin-bottom: 6px; }
+.qa dd { margin: 0; color: #2E2B27; font-size: 16px; }
 
 /* ---------- phones ---------- */
 @media (max-width: 760px) {
@@ -273,6 +280,8 @@ a.done:hover { text-decoration: underline; text-decoration-thickness: 2px; }
   .item-idea .item-head { padding-top: 26px; }
   .about { grid-template-columns: minmax(0, 1fr); gap: 16px; padding-top: 48px; padding-bottom: 56px; }
   .about p { font-size: 18px; }
+  .brief-list { grid-template-columns: minmax(0, 1fr); gap: 22px; }
+  .brief { padding-bottom: 56px; }
 }
 
 /* ---------- reduced motion: everything already ticked ---------- */
