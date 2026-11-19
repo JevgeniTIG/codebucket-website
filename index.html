@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Codebucket list — web platforms, SaaS and mobile apps from Tallinn</title>
+<meta name="description" content="Codebucket is a small software studio in Tallinn, Estonia. Things we once said would be cool to build — and then built: Tradefora, MERE 44, Votumio, Decanted.">
+<meta name="theme-color" content="#F7F5F0">
+<meta property="og:type" content="website">
+<meta property="og:title" content="The Codebucket list.">
+<meta property="og:description" content="Things we once said would be cool to build. Then we built them.">
+<meta property="og:site_name" content="Codebucket">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="top wrap">
+  <a class="logo" href="#top" aria-label="Codebucket — home">Codebucket<span class="dot-mark">.</span></a>
+  <a class="top-cta" href="#idea">Add yours <span aria-hidden="true">→</span></a>
+</header>
+
+<main id="top">
+
+  <section class="hero wrap">
+    <p class="hand kicker">our list, so far —</p>
+    <h1>The Codebucket list<span class="dot-mark">.</span></h1>
+    <p class="lede">Things we once said “it would be cool to build”. Then we built them.</p>
+    <p class="counter"><span class="counter-num" data-counter>0</span> done · 1 open</p>
+  </section>
+
+  <section class="wrap" aria-label="Projects">
+    <ol class="list">
+
+      <li class="item" data-item>
+        <button class="item-head" type="button" aria-expanded="false" aria-controls="p-tradefora">
+          <span class="box" aria-hidden="true"><span class="box-dot"></span></span>
+          <span class="item-text">
+            <span class="goal"><span class="strike">Show brokers how well their trades are really executed</span></span>
+            <span class="meta">Tradefora · execution analytics · web</span>
+          </span>
+          <span class="chev" aria-hidden="true"></span>
+        </button>
+        <a class="hand done tilt-l" href="https://tradefora.com" target="_blank" rel="noopener">done → tradefora.com</a>
+        <div class="item-body" id="p-tradefora">
+          <div class="item-body-inner">
+            <div class="detail">
+              <p>Tradefora measures execution quality for brokers and their traders — slippage, fills, latency — and turns it into reports people actually read. We build the web side: trader cabinet, broker portal, admin tools and a shared design system.</p>
+              <ul class="tags"><li>React</li><li>TypeScript</li><li>Design system</li><li>Data UI</li></ul>
+              <a class="btn" href="https://tradefora.com" target="_blank" rel="noopener">Open tradefora.com</a>
+            </div>
+            <figure class="preview browser">
+              <div class="bar" aria-hidden="true"><i></i><i></i><i></i><span>tradefora.com</span></div>
+              <img src="assets/tradefora.webp" width="1200" height="750" loading="lazy" alt="Tradefora website for traders and brokers">
+            </figure>
+          </div>
+        </div>
+      </li>
+
+      <li class="item" data-item>
+        <button class="item-head" type="button" aria-expanded="false" aria-controls="p-mere">
+          <span class="box" aria-hidden="true"><span class="box-dot"></span></span>
+          <span class="item-text">
+            <span class="goal"><span class="strike">Let buyers walk through a house that isn’t built yet</span></span>
+            <span class="meta">MERE 44 · 3D sales site · web</span>
+          </span>
+          <span class="chev" aria-hidden="true"></span>
+        </button>
+        <a class="hand done tilt-r" href="https://mere44.ee" target="_blank" rel="noopener">done → mere44.ee</a>
+        <div class="item-body" id="p-mere">
+          <div class="item-body-inner">
+            <div class="detail">
+              <p>A sea-view plot near Tallinn, sold before a single brick is laid. The planned house stands on the real plot in 3D: walk the rooms floor by floor, fly over it, compare with drone photos. In Estonian, English and Russian.</p>
+              <ul class="tags"><li>3D in the browser</li><li>Drone survey</li><li>3 languages</li><li>Sales landing</li></ul>
+              <a class="btn" href="https://mere44.ee" target="_blank" rel="noopener">Open mere44.ee</a>
+            </div>
+            <figure class="preview browser">
+              <div class="bar" aria-hidden="true"><i></i><i></i><i></i><span>mere44.ee</span></div>
+              <img src="assets/mere44.webp" width="1200" height="750" loading="lazy" alt="MERE 44: the planned house shown in 3D on the real plot by the sea">
+            </figure>
+          </div>
+        </div>
+      </li>
+
+      <li class="item" data-item>
+        <button class="item-head" type="button" aria-expanded="false" aria-controls="p-votumio">
+          <span class="box" aria-hidden="true"><span class="box-dot"></span></span>
+          <span class="item-text">
+            <span class="goal"><span class="strike">Run a live quiz for the whole room — not just the first 20</span></span>
+            <span class="meta">Votumio · live polls, quizzes, retros · SaaS</span>
+          </span>
+          <span class="chev" aria-hidden="true"></span>
+        </button>
+        <a class="hand done tilt-l" href="https://votumio.com" target="_blank" rel="noopener">done → votumio.com</a>
+        <div class="item-body" id="p-votumio">
+          <div class="item-body-inner">
+            <div class="detail">
+              <p>Born at a team retro where every tool we tried capped the room. Now it’s our own SaaS: polls, quizzes, tests and retrospectives, answered from phones, results live on the big screen. Fifteen languages, exports to PDF and PowerPoint.</p>
+              <ul class="tags"><li>Java</li><li>Spring Boot</li><li>React</li><li>PostgreSQL</li></ul>
+              <a class="btn" href="https://votumio.com" target="_blank" rel="noopener">Open votumio.com</a>
+            </div>
+            <figure class="preview browser">
+              <div class="bar" aria-hidden="true"><i></i><i></i><i></i><span>votumio.com</span></div>
+              <img src="assets/votumio.webp" width="1200" height="750" loading="lazy" alt="Votumio on a projector: a live quiz question with a QR code to join">
+            </figure>
+          </div>
+        </div>
+      </li>
+
+      <li class="item" data-item>
+        <button class="item-head" type="button" aria-expanded="false" aria-controls="p-decanted">
+          <span class="box" aria-hidden="true"><span class="box-dot"></span></span>
+          <span class="item-text">
+            <span class="goal"><span class="strike">Remember every wine we liked — by snapping the label</span></span>
+            <span class="meta">Decanted · wine journal · iOS and Android</span>
+          </span>
+          <span class="chev" aria-hidden="true"></span>
+        </button>
+        <a class="hand done tilt-r" href="https://apps.apple.com/app/id6807045534" target="_blank" rel="noopener">done → App Store</a>
+        <div class="item-body" id="p-decanted">
+          <div class="item-body-inner">
+            <div class="detail">
+              <p>A private wine journal. Point the camera at a bottle and on-device text recognition fills in producer, grape, region and vintage. Works offline; nothing leaves the phone. One codebase, released to both stores with the same version.</p>
+              <ul class="tags"><li>Flutter</li><li>Apple Vision</li><li>ML Kit</li><li>Offline-first</li></ul>
+              <div class="btn-row">
+                <a class="btn" href="https://apps.apple.com/app/id6807045534" target="_blank" rel="noopener">App Store</a>
+                <a class="btn btn-ghost" href="#" data-play-link target="_blank" rel="noopener">Google Play</a>
+              </div>
+            </div>
+            <figure class="preview phone">
+              <img src="assets/decanted.webp" width="540" height="1173" loading="lazy" alt="Decanted: a wine record filled in from a photo of the label">
+            </figure>
+          </div>
+        </div>
+      </li>
+
+      <li class="item item-more" data-item>
+        <div class="item-head static">
+          <span class="box" aria-hidden="true"><span class="box-dot"></span></span>
+          <span class="item-text">
+            <span class="goal small"><span class="strike">Ship a handful of small apps, just because</span></span>
+            <span class="meta">Published under our app label <strong>Code Harbour</strong>:</span>
+            <span class="chips"><span>Smash My Doodle</span><span>Spin and Win</span><span>Catch It All</span><span>Yet Another Sea Battle</span><span>Yet Another Puzzle</span></span>
+          </span>
+        </div>
+        <span class="hand done tilt-l">done ×5</span>
+      </li>
+
+      <li class="item item-idea" id="idea">
+        <div class="item-head static">
+          <span class="box box-open" aria-hidden="true"><span class="box-dot"></span></span>
+          <form class="idea" data-idea-form novalidate>
+            <label class="hand idea-label" for="idea-text">your idea goes here…</label>
+            <textarea id="idea-text" name="idea" rows="2" placeholder="e.g. Let our customers book a table from Instagram" required></textarea>
+            <div class="idea-row">
+              <button class="btn btn-dark" type="submit">Add to the list</button>
+              <span class="idea-mail">or write to <a href="mailto:codebucketest@gmail.com" data-email>codebucketest@gmail.com</a></span>
+            </div>
+            <p class="hand idea-status" data-idea-status role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </li>
+
+    </ol>
+  </section>
+
+  <section class="about wrap">
+    <h2>Who keeps this list<span class="dot-mark">?</span></h2>
+    <p>Codebucket is a small studio in Tallinn, Estonia. We take an idea from a sentence on a list to something people use every day — web platforms, SaaS products and mobile apps, designed, built and shipped by the same people.</p>
+  </section>
+
+</main>
+
+<footer class="foot wrap">
+  <span>© <span data-year>2026</span> CodeBucket OÜ · reg. code 17281724 · Tallinn, Estonia</span>
+  <a href="mailto:codebucketest@gmail.com" data-email>codebucketest@gmail.com</a>
+</footer>
+
+<script src="main.js" defer></script>
+</body>
+</html>
