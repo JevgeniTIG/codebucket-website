@@ -105,6 +105,13 @@ const DECANTED_PLAY_URL = 'https://play.google.com/store/apps/details?id=com.agn
         return;
       }
 
+      const captchaField = form.querySelector('[name="h-captcha-response"]');
+      const captcha = captchaField ? captchaField.value : '';
+      if (!captcha) {
+        status.textContent = 'one more thing — tick “I am human” above';
+        return;
+      }
+
       sending = true;
       button.disabled = true;
       status.textContent = 'adding it…';
@@ -119,6 +126,7 @@ const DECANTED_PLAY_URL = 'https://play.google.com/store/apps/details?id=com.agn
             email: from,
             replyto: from,
             message: idea,
+            'h-captcha-response': captcha,
             botcheck: false
           })
         });
@@ -127,8 +135,10 @@ const DECANTED_PLAY_URL = 'https://play.google.com/store/apps/details?id=com.agn
         row.classList.add('is-done');
         status.textContent = 'added — we’ll get back to you soon';
         form.reset();
+        if (window.hcaptcha) { try { window.hcaptcha.reset(); } catch (e) { /* ignore */ } }
       } catch (e) {
         status.textContent = 'something went wrong — please write to ' + CONTACT_EMAIL;
+        if (window.hcaptcha) { try { window.hcaptcha.reset(); } catch (err) { /* ignore */ } }
       } finally {
         sending = false;
         button.disabled = false;

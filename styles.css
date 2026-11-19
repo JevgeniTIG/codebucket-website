@@ -228,6 +228,7 @@ a.done:hover { text-decoration: underline; text-decoration-thickness: 2px; }
 }
 .idea-email:focus { border-color: var(--ink); outline: none; }
 .idea-email::placeholder { color: #8F8A82; }
+.idea-captcha { min-height: 78px; margin-top: 4px; }
 .hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
 .btn:disabled { opacity: .55; cursor: progress; }
 .idea-row { display: flex; flex-wrap: wrap; align-items: center; gap: 16px; }
