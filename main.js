@@ -78,6 +78,8 @@ const DECANTED_PLAY_URL = 'https://play.google.com/store/apps/details?id=com.agn
     const button = form.querySelector('button[type="submit"]');
     const honeypot = form.querySelector('input[name="botcheck"]');
     let sending = false;
+    const captchaBox = form.querySelector('.idea-captcha');
+    let captchaWatch = null;
 
     form.addEventListener('submit', async (ev) => {
       ev.preventDefault();
@@ -108,7 +110,17 @@ const DECANTED_PLAY_URL = 'https://play.google.com/store/apps/details?id=com.agn
       const captchaField = form.querySelector('[name="h-captcha-response"]');
       const captcha = captchaField ? captchaField.value : '';
       if (!captcha) {
-        status.textContent = 'one more thing — tick “I am human” above';
+        // Show the human check only now, then send automatically once it is solved.
+        captchaBox.classList.add('show');
+        status.textContent = 'one last step — tick “I am human”';
+        clearInterval(captchaWatch);
+        captchaWatch = setInterval(() => {
+          const f = form.querySelector('[name="h-captcha-response"]');
+          if (f && f.value) {
+            clearInterval(captchaWatch);
+            form.requestSubmit ? form.requestSubmit() : form.dispatchEvent(new Event('submit', { cancelable: true }));
+          }
+        }, 300);
         return;
       }
 
@@ -135,6 +147,7 @@ const DECANTED_PLAY_URL = 'https://play.google.com/store/apps/details?id=com.agn
         row.classList.add('is-done');
         status.textContent = 'added — we’ll get back to you soon';
         form.reset();
+        captchaBox.classList.remove('show');
         if (window.hcaptcha) { try { window.hcaptcha.reset(); } catch (e) { /* ignore */ } }
       } catch (e) {
         status.textContent = 'something went wrong — please write to ' + CONTACT_EMAIL;
