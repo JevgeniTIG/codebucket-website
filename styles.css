@@ -200,7 +200,10 @@ a.done:hover { text-decoration: underline; text-decoration-thickness: 2px; }
 /* "more" row */
 .item-more .item-head { padding: 26px 0; }
 .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px; }
-.chips span { font-size: 14px; padding: 5px 12px; border-radius: 999px; background: #FFFFFF; border: 1px solid var(--line); }
+.chips a { display: inline-flex; align-items: center; min-height: 36px; font-size: 14px; padding: 6px 14px; border-radius: 999px; background: #FFFFFF; border: 1px solid var(--line); text-decoration: none; transition: border-color .2s, background .2s, color .2s; }
+.chips a::after { content: "↗"; margin-left: 6px; color: var(--red-text); }
+.chips a:hover { border-color: var(--ink); background: var(--ink); color: #FFFFFF; }
+.chips a:hover::after { color: #FFFFFF; }
 .item-more .done { margin-top: 26px; }
 
 /* idea row */
