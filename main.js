@@ -1,5 +1,5 @@
 // ---- Site settings -------------------------------------------------------
-const CONTACT_EMAIL = 'codebucketest@gmail.com';
+const CONTACT_EMAIL = 'info@codebucket.ee';
 // Google Play link for Decanted. Leave empty to hide the button.
 const DECANTED_PLAY_URL = 'https://play.google.com/store/apps/details?id=com.agnevstsikov.decanted';
 // --------------------------------------------------------------------------
