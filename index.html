@@ -156,6 +156,9 @@
           <form class="idea" data-idea-form novalidate>
             <label class="hand idea-label" for="idea-text">your idea goes here…</label>
             <textarea id="idea-text" name="idea" rows="2" placeholder="e.g. Let our customers book a table from Instagram" required></textarea>
+            <label class="idea-email-label" for="idea-email">Your e-mail, so we can reply</label>
+            <input id="idea-email" class="idea-email" type="email" name="email" autocomplete="email" placeholder="you@company.com" required>
+            <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
             <div class="idea-row">
               <button class="btn btn-dark" type="submit">Add to the list</button>
               <span class="idea-mail">or write to <a href="mailto:info@codebucket.ee" data-email>info@codebucket.ee</a></span>

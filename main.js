@@ -1,5 +1,7 @@
 // ---- Site settings -------------------------------------------------------
 const CONTACT_EMAIL = 'info@codebucket.ee';
+// Web3Forms access key (public by design). Submissions arrive at the address the key was created for.
+const WEB3FORMS_KEY = 'bc6983df-7391-4ed1-ab1b-c134606afe8a';
 // Google Play link for Decanted. Leave empty to hide the button.
 const DECANTED_PLAY_URL = 'https://play.google.com/store/apps/details?id=com.agnevstsikov.decanted';
 // --------------------------------------------------------------------------
@@ -72,25 +74,69 @@ const DECANTED_PLAY_URL = 'https://play.google.com/store/apps/details?id=com.agn
     const status = form.querySelector('[data-idea-status]');
     const row = form.closest('.item');
 
-    form.addEventListener('submit', (ev) => {
+    const email = form.querySelector('input[type="email"]');
+    const button = form.querySelector('button[type="submit"]');
+    const honeypot = form.querySelector('input[name="botcheck"]');
+    let sending = false;
+
+    form.addEventListener('submit', async (ev) => {
       ev.preventDefault();
+      if (sending) return;
       const idea = text.value.trim();
+      const from = email.value.trim();
       if (!idea) {
         status.textContent = 'write something first :)';
         text.focus();
         return;
       }
-      const subject = 'New item for the Codebucket list';
-      const body = idea + '\n\n—\nSent from codebucket list';
-      window.location.href = 'mailto:' + CONTACT_EMAIL +
-        '?subject=' + encodeURIComponent(subject) +
-        '&body=' + encodeURIComponent(body);
-      row.classList.add('is-done');
-      status.textContent = 'on its way — your mail app should open now';
+      if (!from || !email.checkValidity()) {
+        status.textContent = 'and an e-mail, so we can reply';
+        email.focus();
+        return;
+      }
+      if (honeypot && honeypot.checked) return;
+
+      // No key configured yet: fall back to the visitor's mail app.
+      if (!WEB3FORMS_KEY) {
+        window.location.href = 'mailto:' + CONTACT_EMAIL +
+          '?subject=' + encodeURIComponent('New item for the Codebucket list') +
+          '&body=' + encodeURIComponent(idea + '\n\n— ' + from);
+        status.textContent = 'your mail app should open now';
+        return;
+      }
+
+      sending = true;
+      button.disabled = true;
+      status.textContent = 'adding it…';
+      try {
+        const res = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+          body: JSON.stringify({
+            access_key: WEB3FORMS_KEY,
+            subject: 'New item for the Codebucket list',
+            from_name: 'codebucket.ee',
+            email: from,
+            replyto: from,
+            message: idea,
+            botcheck: false
+          })
+        });
+        const data = await res.json().catch(() => ({}));
+        if (!res.ok || data.success === false) throw new Error(data.message || 'failed');
+        row.classList.add('is-done');
+        status.textContent = 'added — we’ll get back to you soon';
+        form.reset();
+      } catch (e) {
+        status.textContent = 'something went wrong — please write to ' + CONTACT_EMAIL;
+      } finally {
+        sending = false;
+        button.disabled = false;
+      }
     });
 
     text.addEventListener('input', () => {
-      if (status.textContent.startsWith('write')) status.textContent = '';
+      if (status.textContent.startsWith('write') || status.textContent.startsWith('and an')) status.textContent = '';
     });
   }
 })();
